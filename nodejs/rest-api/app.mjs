@@ -28,7 +28,7 @@ app.put("/reading-list/books/:uuid", (req, res) => {
   const uuid = req.params.uuid;
   const { status } = req.body;
   if (!uuid || typeof uuid !== "string") {
-    return res.status(400).json({ error: "missing or invalid UUID" });
+    return res.status(400).json({ error: "missing or invalid UUID." });
   }
   if (!cache.has(uuid)) {
     return res.status(404).json({ error: "UUID does not exist" });
